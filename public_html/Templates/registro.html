@@ -1,0 +1,50 @@
+{VARIABLE}    
+        <br>
+        <div class="Regist" >
+            <form action="SignIn.php"  onsubmit="return validar()" method ="post">
+                        <H3>Registrarse</H3>
+                        Nombre(s):<br>
+			<input type="text" name="nombre"><br>
+                        Apellido Paterno:<br>
+			<input type="text" name="ApPaterno"><br>
+			Apellido Materno:<br>
+			<input type="text" name="ApMaterno"><br>
+			Nombre de Usuario:<br>
+			<input type="text" name="NombreUsuario"><br>
+			Fecha de nacimiento:<br>
+			<input type="date" name="FechaNac"><br>
+			Género:<br>
+			<input list="generos" name="genero">
+				<datalist id="generos">
+				<option value="Masculino">
+				<option value="Femenino">
+				<option value="Prefiero no contestar">
+			</datalist><br>
+			Correo electrónico:<br>
+			<input type="email" name="email"><br>
+			Contraseña:<br>
+			<input type="password" name="pass1" id="pass1"><br>
+			Confirmar Contraseña:<br>
+			<input type="password" name="pass2" id="pass2"><br><br>
+	                <input type="submit" value="Aceptar" class="RegistButton">
+                        
+                       
+                </form>
+        </div >
+<script>
+function validar() {
+        var pass1 = document.getElementById("pass1").value;
+        var pass2 = document.getElementById("pass2").value;
+	var pasar = true;
+        if (pass1 != pass2) {
+		alert("Passwords Do not match");
+		document.getElementById("pass1").style.borderColor = "#E34234";
+		document.getElementById("pass2").style.borderColor = "#E34234";
+		var pasar = false;
+        }
+        else {
+            
+        }
+        return pasar;
+    }
+</script>
